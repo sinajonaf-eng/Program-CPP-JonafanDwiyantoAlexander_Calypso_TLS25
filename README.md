@@ -1,4 +1,5 @@
 # JonafanDwiyantoAlexander_Calypso
+//UntukNomor2
 #include <iostream>
 #include <string>
 using namespace std;
@@ -80,5 +81,30 @@ int main() {
     string hasil = recoverPartialWord(sandi);
     cout << "Hasil rekonstruksi parsial: " << hasil << endl;
 
+    return 0;
+}
+
+
+
+//UntukNomor3
+#include <iostream>
+#include <vector>
+using namespace std;
+
+string warnaAPILL(long long t) {
+    const int HIJAU = 20, KUNING = 3, MERAH = 80;
+    const int TOTAL = HIJAU + KUNING + MERAH;      // 103
+    const int OFFSET = 78;                         // agar 45–47 jadi kuning
+
+    int c = (int)((t + OFFSET) % TOTAL);           // posisi dalam siklus
+    return (c <= HIJAU - 1)       ? "Hijau" :
+           (c <= HIJAU + KUNING - 1) ? "Kuning" :
+                                      "Merah";
+}
+
+int main() {
+    vector<long long> times = {80, 135, 150, 212};
+    for (auto t : times)
+        cout << t << " -> " << warnaAPILL(t) << '\n';
     return 0;
 }
